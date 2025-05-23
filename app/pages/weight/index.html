@@ -1,27 +1,60 @@
 {{define "content"}}
-<form action="/weight" method="post" class="flex flex-col gap-4">
-  <label for="weight" class="block text-lg font-bold">Weight</label>
-  <input type="number" name="weight" id="weight" class="p-2 rounded" required />
-  <select name="from" class="p-2 rounded" required>
-    <option value="g">Gram</option>
-    <option value="kg">Kilogram</option>
-    <option value="oz">Ounce</option>
-    <option value="lb">Pound</option>
-    <option value="st">Stone</option>
-  </select>
-  <select name="to" class="p-2 rounded" required>
-    <option value="g">Gram</option>
-    <option value="kg">Kilogram</option>
-    <option value="oz">Ounce</option>
-    <option value="lb">Pound</option>
-    <option value="st">Stone</option>
-  </select>
-  <button
-    type="submit"
-    class="bg-blue-500 hover:bg-blue-700 text-white rounded p-2"
-  >
-    Convert
-  </button>
-</form>
-
+<div class="max-w-md mx-auto bg-white p-6 rounded-lg shadow-md">
+  <h1 class="text-2xl font-bold text-gray-800 mb-6 text-center">Weight Converter</h1>
+  <form action="/weight" method="post" class="space-y-6">
+    <div>
+      <label for="weight" class="block text-sm font-medium text-gray-700 mb-1">Weight Value</label>
+      <input 
+        type="number" 
+        name="weight" 
+        id="weight" 
+        class="mt-1 block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-blue-500 focus:border-blue-500" 
+        placeholder="Enter weight"
+        step="any"
+        required 
+      />
+    </div>
+    
+    <div>
+      <label for="from" class="block text-sm font-medium text-gray-700 mb-1">From Unit</label>
+      <select 
+        name="from" 
+        id="from" 
+        class="mt-1 block w-full pl-3 pr-10 py-2 text-base border border-gray-300 focus:outline-none focus:ring-blue-500 focus:border-blue-500 rounded-md"
+        required
+      >
+        <option value="g">Gram (g)</option>
+        <option value="kg" selected>Kilogram (kg)</option>
+        <option value="oz">Ounce (oz)</option>
+        <option value="lb">Pound (lb)</option>
+        <option value="st">Stone (st)</option>
+      </select>
+    </div>
+    
+    <div>
+      <label for="to" class="block text-sm font-medium text-gray-700 mb-1">To Unit</label>
+      <select 
+        name="to" 
+        id="to" 
+        class="mt-1 block w-full pl-3 pr-10 py-2 text-base border border-gray-300 focus:outline-none focus:ring-blue-500 focus:border-blue-500 rounded-md"
+        required
+      >
+        <option value="g">Gram (g)</option>
+        <option value="kg">Kilogram (kg)</option>
+        <option value="oz">Ounce (oz)</option>
+        <option value="lb" selected>Pound (lb)</option>
+        <option value="st">Stone (st)</option>
+      </select>
+    </div>
+    
+    <div class="pt-2">
+      <button
+        type="submit"
+        class="w-full flex justify-center py-2 px-4 border border-transparent rounded-md shadow-sm text-sm font-medium text-white bg-blue-600 hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500 transition-colors duration-200"
+      >
+        Convert
+      </button>
+    </div>
+  </form>
+</div>
 {{end}}

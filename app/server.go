@@ -34,6 +34,12 @@ func NewServer() *Server {
 	server.router.Use(middleware.Recoverer)
 	server.router.Route("/", func(r chi.Router) {
 		r.Get("/", server.controller.HomeHandler)
+		r.Get("/length", server.controller.LengthHandler)
+		r.Get("/temperature", server.controller.TemperatureHandler)
+		r.Get("/weight", server.controller.WeightHandler)
+		r.Post("/length", server.controller.LengthResultHandler)
+		r.Post("/temperature", server.controller.TemperatureResultHandler)
+		r.Post("/weight", server.controller.WeightResultHandler)
 	})
 
 	return &server
