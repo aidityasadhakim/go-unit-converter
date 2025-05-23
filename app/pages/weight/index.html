@@ -1,0 +1,27 @@
+{{define "content"}}
+<form action="/weight" method="post" class="flex flex-col gap-4">
+  <label for="weight" class="block text-lg font-bold">Weight</label>
+  <input type="number" name="weight" id="weight" class="p-2 rounded" required />
+  <select name="from" class="p-2 rounded" required>
+    <option value="g">Gram</option>
+    <option value="kg">Kilogram</option>
+    <option value="oz">Ounce</option>
+    <option value="lb">Pound</option>
+    <option value="st">Stone</option>
+  </select>
+  <select name="to" class="p-2 rounded" required>
+    <option value="g">Gram</option>
+    <option value="kg">Kilogram</option>
+    <option value="oz">Ounce</option>
+    <option value="lb">Pound</option>
+    <option value="st">Stone</option>
+  </select>
+  <button
+    type="submit"
+    class="bg-blue-500 hover:bg-blue-700 text-white rounded p-2"
+  >
+    Convert
+  </button>
+</form>
+
+{{end}}

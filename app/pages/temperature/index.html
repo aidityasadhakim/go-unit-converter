@@ -1,0 +1,29 @@
+{{define "content"}}
+<form action="/temperature" method="post" class="flex flex-col gap-4">
+  <label for="temperature" class="block text-lg font-bold">Temperature</label>
+  <input
+    type="number"
+    name="temperature"
+    id="temperature"
+    class="p-2 rounded"
+    required
+  />
+  <select name="from" class="p-2 rounded" required>
+    <option value="c">Celsius</option>
+    <option value="f">Fahrenheit</option>
+    <option value="k">Kelvin</option>
+  </select>
+  <select name="to" class="p-2 rounded" required>
+    <option value="c">Celsius</option>
+    <option value="f">Fahrenheit</option>
+    <option value="k">Kelvin</option>
+  </select>
+  <button
+    type="submit"
+    class="bg-blue-500 hover:bg-blue-700 text-white rounded p-2"
+  >
+    Convert
+  </button>
+</form>
+
+{{end}}
